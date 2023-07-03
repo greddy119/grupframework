@@ -1,0 +1,12 @@
+Webpack(imports/exports)
+    Babel
+    Scss
+    Eslind
+    2 modes
+        dev
+            dev server, source maps, eslind, css(nemificat) js(nemificat)
+        prod
+            minificat cod
+
+WebDevelopment(HTML,CSS)
+    ...
