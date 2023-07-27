@@ -4,6 +4,7 @@
     "parser": "@babel/eslint-parser",
     "requireConfigFile": false,
     "ecmaVersion": 2018,
+    "ecmaFeatures" : {"jsx" : true},
     "sourceType": "module"
   },
   "env": {
@@ -11,6 +12,8 @@
     "browser": true,
     "node": true
   },
-  "rules": {},
+  "rules": {
+    "require-jsdoc" : 0
+  },
   "extends": ["eslint:recommended", "google"]
 }

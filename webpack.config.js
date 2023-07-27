@@ -1,34 +1,31 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const {CleanWebpackPlugin} = require("clean-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const path = require('path');
-const ESLintPlugin = require('eslint-webpack-plugin');
+const path = require("path");
+const ESLintPlugin = require("eslint-webpack-plugin");
 // const node: path = require("node:path");
-
-
-const isProd = process.env.NODE_ENV === 'productions';
+const isProd = process.env.NODE_ENV === "productions";
 const isDev = !isProd;
 const jsLoaders = () => {
     const loaders = [
         {
-            loader: 'babel-loader',
+            loader: "babel-loader",
             options: {
-                presets: ['@babel/preset-env']
+                presets: ["@babel/preset-env"]
             }
         }
     ]
     return loaders
 }
-
 module.exports = {
-    context: path.resolve(__dirname, 'src'),
-    mode: 'development',
-    entry: './index.js',
+    context: path.resolve(__dirname, "src"),
+    mode: "development",
+    entry: "./index.js",
     output: {
-        filename: 'bundle.js',
-        //sau filename: 'main.js',
-        path: path.resolve(__dirname, 'dist'),
+        filename: "bundle.js",
+        //sau filename: "main.js",
+        path: path.resolve(__dirname, "dist"),
     },
     resolve:{
       extensions: [".js"],
@@ -49,7 +46,6 @@ module.exports = {
                 minify: {
                     removeComments: isProd,
                     collapseWhitespace: isProd,
-
                 }
             }
         ),
@@ -64,8 +60,6 @@ module.exports = {
         new MiniCssExtractPlugin(),
         new ESLintPlugin(),
     ],
-
-
     module: {
         rules: [
             {
@@ -83,5 +77,4 @@ module.exports = {
             },
         ],
     },
-
 };

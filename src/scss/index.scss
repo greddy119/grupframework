@@ -1,4 +1,28 @@
-$collor: red;
+@import 'normalize.css';
+@import 'formule';
+@import 'header';
+@import 'table';
+@import 'toolbar';
+@import 'dashboard';
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200&family=Space+Grotesk:wght@300&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 body{
-  background-color: $collor;
+  font-family: Oswald, serif;
+  font-size: 12px;
+}
+.excell{
+  position: relative;
+  color: #888;
+  height: 100px;
+  max-width: 100%;
+  font-size: 0.8rem;
+}
+
+.db{
+
 }
