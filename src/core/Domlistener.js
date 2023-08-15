@@ -9,13 +9,11 @@ export class Domlistener {
     this.listeners = listeners;
   }
   initDomListener() {
-    console.log(this.listeners);
     this.$root.on();
     this.listeners.forEach((listener)=>{
       const method = 'on' + capitalize(listener);
       if (!this[method]) {
         const name = this.name;
-        console.log(name);
         throw new Error(`
         Metoda ${method} nu este implementata in ${name} component
         `);

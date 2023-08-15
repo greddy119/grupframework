@@ -3,6 +3,7 @@
 
 .excell__toolbar{
     display: flex;
+    justify-content: space-around;
     position: absolute;
     height: $toolbar-height;
     padding: 7px 10px;
