@@ -16,14 +16,15 @@ export class Table extends Excellcomponent {
       // const $parent = $resizer.$el.parentNode; // bad
       // const $parent = $resizer.$el.closest('.column'); // better but bad
       const $parent = $resizer.closest('[data-type = "resizable"]');
+      // eslint-disable-next-line no-debugger
+      debugger;
       const cell = this.$root.findAll(`[data-col = "${$parent.data.col}"]`);
-      console.log(this.$root);
       const coords = $parent.getCoords();
       document.onmousemove = (event) => {
         const delta = event.pageX - coords.right;
+        const alfa = event.pageY - coords.bottom;
         const value = coords.width + delta;
         $parent.$el.style.width = `${value}px`;
-        console.log($parent.data);
         cell.forEach((item)=> {
           item.style.width = `${value}px`;
         });

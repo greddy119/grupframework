@@ -11,7 +11,7 @@ ${col}
 const createRow = (index, content) => {
   const resizer = index ?
     `<div class="row-resize" data-resize="row"></div>` : ``;
-  return `<div class="row">
+  return `<div class="row" data-type="resizable">
              <div class="row-info">${index ? index : ''}
             ${resizer}
              </div>
