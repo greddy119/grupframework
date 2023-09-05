@@ -32,6 +32,9 @@
         cursor: row-resize;
       }
     }
+    &::selection {
+      background-color: white;
+    }
   }
   .row-data{
     display:flex;
@@ -55,6 +58,9 @@
         cursor: col-resize;
       }
     }
+    &::selection {
+      background-color: white;
+    }
   }
   .col-resize, .row-resize{
     position: absolute;
@@ -62,7 +68,7 @@
     background-color: blue;
     opacity: 0;
     &:hover{
-      opacity: 1;
+      opacity: 1!important;
     }
   }
   .cell{
@@ -78,6 +84,9 @@
       border: none;
       outline: 2px solid #3c74ff;
       z-index: 2;
+    }
+    &::selection {
+      background-color: white;
     }
   }
 
