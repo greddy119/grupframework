@@ -48,19 +48,18 @@ class Dom {
   get data() {
     return this.$el.dataset;
   }
-
   findAll(selector) {
-    return document.querySelectorAll(selector);
+    return this.$el.querySelectorAll(selector);
   }
-
-  /*
-{
-height: "30px",
-width: "42px",
-color: "red",
-backgroundColor: "blue";
-}
-   */
+  find(selector) {
+    return $(this.$el.querySelector(selector));
+  }
+  addClass(className) {
+    this.$el.classList.add(className);
+  }
+  removeClass(className) {
+    this.$el.classList.remove(className);
+  }
   css(styles = {}) {
     Object.keys(styles).forEach((key) => {
       this.$el.style[key] = styles[key];

@@ -19,10 +19,17 @@ const createRow = (index, content) => {
           </div>  
   `;
 };
-const createCell = (_, index) => {
-  return `
-    <div class="cell" contenteditable="true" data-col="${index}"></div>
+const createCell = (row) => {
+  return (_, col) => {
+    return `
+    <div 
+    class="cell" 
+    contenteditable="true" 
+    data-col="${col}" 
+    data-id="${row}:${col}">
+    </div>
     `;
+  };
 };
 const toChar = (_, index) => {
   return String.fromCharCode(CODES.A + index);
@@ -40,7 +47,8 @@ export const createTable = (rowsCount= 15) =>{
   for (let i = 0; i < rowsCount; i++) {
     const cell = new Array(colsCount)
         .fill('')
-        .map(createCell)
+        // .map((_, col) => createCell(i, col))
+        .map(createCell(i))
         .join('');
     rows.push(createRow(i+1, cell));
   }
